@@ -1,3 +1,4 @@
-add_executable(calculator calculator/calculator.cpp
-        projects/calculator/calculator.cpp)
-add_executable(hello hello/hello.cpp)
+add_executable(calculator
+        projects/calculator/calculator.cpp
+)
+add_executable(name projects/name/name.cpp)
