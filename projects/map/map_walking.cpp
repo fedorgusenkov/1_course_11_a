@@ -5,7 +5,6 @@ using namespace std;
 
 int main() {
     int x,y;
-    int b;
     int a = 0;
     enum location {ocean, beach};
     location map;
