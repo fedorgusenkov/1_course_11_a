@@ -5,7 +5,8 @@ using namespace std;
 
 int main() {
     int x,y;
-    int a,b;
+    int b;
+    int a = 0;
     enum location {ocean, beach};
     location map;
 
@@ -71,8 +72,19 @@ int main() {
 
                 if (x+y>2) {
                     map = beach;
+                    if (x==2&&y==2) {
+                        a=a+1;
+                    }
+
+
+
                 }
-                else { map = ocean; }
+                else {
+                    map = ocean;
+                    if (x==0&&y==0) {
+                        a=a-1;
+                    }
+                }
 
                 switch (map) {
                     case ocean:
@@ -86,6 +98,9 @@ int main() {
 
 
             }
+            cout<<"You have ";
+            cout<<a;
+            cout<<" coin(s)"<<endl;
             cout<<"Do you wont to go?"<<endl;
             cin>>ans;
         }
