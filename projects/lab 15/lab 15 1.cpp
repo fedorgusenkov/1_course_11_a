@@ -8,7 +8,8 @@ double minArray(double*, int);
 int dimension(double*, int);
 double summ(double*, int);
 double avggeom(double*, int);
-void sortArray(double*, int);
+void sortArrayBubble(double*, int);
+void sortArraySelection(double*, int);
 int main() {
     using namespace std;
     //переменная, оперед. размерность
@@ -20,13 +21,14 @@ int main() {
     double *array = new double[size];
     //инициал. и обработка одном. массива
     newInitArray(array, size);
- cout << "Инициализированный массив: \n";
+ cout << "Initialized array: \n";
 printArray (array, size);
 cout << "\nMin in array = "<< minArray(array, size)<<endl;
     cout<<"% 4: "<<dimension(array, size)<<endl;
     cout<<"Summ of n % 3 !=0:  "<<summ(array, size)<<endl;
-    cout<<"Avg geometrical of 2n numbers: "<<avggeom(array, size);
-    sortArray(array, size);
+    cout<<"Avg geometrical of 2n numbers: "<<avggeom(array, size)<<endl;
+    sortArrayBubble(array, size);
+    sortArraySelection(array, size);
 delete []array;
 return 0;
 }
@@ -83,7 +85,7 @@ double avggeom(double *a,int n) {
     return avg;
 }
 
-void sortArray(double *a, int n) {
+void sortArrayBubble(double *a, int n) {
     double temp{1};
 for (int i{0};i<n-1;i++) {
     for (int j{0}; j<n-1; j++) {
@@ -94,6 +96,21 @@ for (int i{0};i<n-1;i++) {
         }
     }
 }
-    std::cout << "Array sorted: \n";
+    std::cout << "Array sorted by bubbles: \n";
     printArray (a, n);
+    std::cout << std::endl;
+}
+
+void sortArraySelection(double *a, int n) {
+    for (int i{0}; i<n-1; i++) {
+    int m=i;
+    for (int j=i; j<n; j++) {
+     if (a[m]>a[j]) {m=j;}
+        std::swap(a[i],a[m]);
+    }
+
+    }
+    std::cout << "Array sorted by selection: \n";
+    printArray (a, n);
+    std::cout << std::endl;
 }
