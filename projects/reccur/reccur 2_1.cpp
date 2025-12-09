@@ -8,6 +8,6 @@ int main() {
     double n;
     std::cin>>n;
     std::cout << "Ex = "<< ex(n) << std::endl;
-
+//fdfdfd
     return 0;
 }
